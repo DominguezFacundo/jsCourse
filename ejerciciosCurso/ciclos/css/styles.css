@@ -1,0 +1,9 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    padding-top: 50px;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
