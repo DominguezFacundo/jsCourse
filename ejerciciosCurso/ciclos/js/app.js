@@ -1,4 +1,4 @@
-const OBJETIVO = 15;
+const OBJECTIVE = 15;
 let salesNumber;
 let salesman;
 let cycleEnds = false;
@@ -7,7 +7,7 @@ salesman = prompt ('Ingrese el nombre del vendedor: ');
 salesNumber = prompt ('Ingrese sus ventas: ')
 
 while (!cycleEnds) {
-    if (salesNumber < OBJETIVO) {
+    if (salesNumber < OBJECTIVE) {
         alert('Hola '+ salesman + '! vas por la venta '+ salesNumber +' todavía no llegaste al objetivo.')
     } else {
             alert('Felicidades '+ salesman +' llegaste al objetivo! tenes ' + salesNumber +' ventas!')
@@ -22,8 +22,8 @@ while (!cycleEnds) {
             if (respuestaVentas == 'si') {
                 salesNumber = prompt ('Ingrese sus ventas: ')
             } else {
-                cycleEnds = true;
-                alert('gracias, vuelva prontos! ')
+                alert('Gracias, vuelva prontos! ')
+                break
             }
         }
     }
