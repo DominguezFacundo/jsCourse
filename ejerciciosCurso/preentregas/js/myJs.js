@@ -240,26 +240,6 @@ addButtons.forEach((addButton) => {
   addButton.addEventListener("click", addPlayer)
 })
 
-const hideRow = () => {
-  if (Player.role === "top") {
-    topContainer.style.display = "none"
-  } else if (Player.role === "jungla") {
-    jungleContainer.style.display = "none"
-  } else if (Player.role === "mid") {
-    midContainer.style.display = "none"
-  } else if (Player.role === "adc") {
-    adcContainer.style.display = "none"
-  } else if (Player.role === "support") {
-    supportContainer.style.display = "none"
-  }
-      
-}
-
-
-const topButton = document.querySelectorAll(".addPlayerButton")
-topButton.forEach((topButton) => {
-  topButton.addEventListener("click", hideRow)
-})
 
 
 
