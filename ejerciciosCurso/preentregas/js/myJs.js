@@ -1,8 +1,9 @@
 // class declaration
 
 class Player {
-  constructor(name, role, topFive, bestChampion, team, country) {
+  constructor(name, image, role, topFive, bestChampion, team, country) {
     this.name = name
+    this.image = image
     this.role = role
     this.topFive = topFive
     this.bestChampion = bestChampion
@@ -14,44 +15,55 @@ class Player {
 
 // top players
 
-const top5 = new Player("hanabi", "top", "5", "Gnar", "psg talon", "Taiwan")
-const top4 = new Player("impact", "top", "4", "Gangplank", "evil geniuses", "Corea del sur")
-const top3 = new Player("brokenblade", "top", "3", "Sion", "g2 esports", "Alemania")
-const top2 = new Player("Bin", "top", "2", "Gwen", "rng", "China")
-const top1 = new Player("Zeus", "top", "1", "Gragas", "t1", "Corea del sur")
+const top5 = new Player("hanabi", "psgTalon/hanabi.png", "top", "5", "Gnar", "psg talon", "Taiwan")
+const top4 = new Player("impact", "evilGeniuses/impact.png", "top", "4", "Gangplank", "evil geniuses", "Corea del sur")
+const top3 = new Player("brokenblade", "G2/brokenBlade.png", "top", "3", "Sion", "g2 esports", "Alemania")
+const top2 = new Player("Bin", "RNG/bin.png", "top", "2", "Gwen", "rng", "China")
+const top1 = new Player("Zeus", "T1/zeus.png", "top", "1", "Gragas", "t1", "Corea del sur")
+
+const topArray = [top5, top4, top3, top2, top1]
 
 // jungle players
 
-const jungle1 = new Player("juhan", "jungla", "5", "Hecarim", "psg talon", "Corea del sur")
-const jungle2 = new Player("inspired", "jungla", "4", "Trundle", "evil geniuses", "Polonia")
-const jungle3 = new Player("jankos ", "jungla", "3", "Xin Zhao", "g2 esports", "Polonia")
-const jungle4 = new Player("wei", "jungla", "2", "Viego", "rng", "China")
-const jungle5 = new Player("oner", "jungla", "1", "Lee Sin", "t1", "Corea del sur")
+const jungle5 = new Player("juhan", "noPhoto.png", "jungla", "5", "Hecarim", "psg talon", "Corea del sur")
+const jungle4 = new Player("inspired", "evilGeniuses/inspired.png", "jungla", "4", "Trundle", "evil geniuses", "Polonia")
+const jungle3 = new Player("jankos ", "G2/jankos.png", "jungla", "3", "Xin Zhao", "g2 esports", "Polonia")
+const jungle2 = new Player("wei", "RNG/wei.png", "jungla", "2", "Viego", "rng", "China")
+const jungle1 = new Player("oner", "T1/oner.png", "jungla", "1", "Lee Sin", "t1", "Corea del sur")
+
+const jungleArray = [jungle5, jungle4, jungle3, jungle2, jungle1]
 
 // mid players
 
-const mid1 = new Player("bay", "mid", "5", "Syndra", "psg talon", "Corea del sur")
-const mid2 = new Player("jojopyun", "mid", "4", "Viktor", "evil geniuses", "Canada")
-const mid3 = new Player("caps", "mid", "3", "Sylas", "g2 esports", "Dinamarca")
-const mid4 = new Player("xiaohu", "mid", "2", "Galio", "rng", "China")
-const mid5 = new Player("faker", "mid", "1", "Ahri", "t1", "Corea del sur")
+const mid5 = new Player("bay", "noPhoto.png", "mid", "5", "Syndra", "psg talon", "Corea del sur")
+const mid4 = new Player("jojopyun", "noPhoto.png","mid", "4", "Viktor", "evil geniuses", "Canada")
+const mid3 = new Player("caps", "G2/caps.png", "mid", "3", "Sylas", "g2 esports", "Dinamarca")
+const mid2 = new Player("xiaohu", "RNG/xiaohu.png", "mid", "2", "Galio", "rng", "China")
+const mid1 = new Player("faker", "T1/faker.png", "mid", "1", "Ahri", "t1", "Corea del sur")
 
+const midArray = [mid5, mid4, mid3, mid2, mid1]
 
 // adc players
 
-const adc1 = new Player("unified", "adc", "5", "Jinx", "psg talon", "Hong Kong")
-const adc2 = new Player("danny", "adc", "4", "Zeri", "evil geniuses", "USA")
-const adc3 = new Player("flakked", "adc", "3", "Xayah", "g2 esports", "España")
-const adc4 = new Player("gala", "adc", "2", "Aphelios", "rng", "China")
-const adc5 = new Player("gumayusi", "adc", "1", "Caitlyn", "t1", "Corea del sur")
+const adc5 = new Player("unified", "psgTalon/unified.png", "adc", "5", "Jinx", "psg talon", "Hong Kong")
+const adc4 = new Player("danny", "evilGeniuses/danny.png", "adc", "4", "Zeri", "evil geniuses", "USA")
+const adc3 = new Player("flakked", "G2/flakked.png", "adc", "3", "Xayah", "g2 esports", "España")
+const adc2 = new Player("gala", "RNG/gala.png", "adc", "2", "Aphelios", "rng", "China")
+const adc1 = new Player("gumayusi", "T1/gumayusi.png", "adc", "1", "Caitlyn", "t1", "Corea del sur")
+
+const adcArray = [adc5, adc4, adc3, adc2, adc1]
 
 // support players
 
-const support1 = new Player("kaiwing", "support", "5", "Nautilus", "psg talon", "Hong Kong")
-const support2 = new Player("vulcan", "support", "4", "Alistar", "evil geniuses", "Canada")
-const support3 = new Player("targamas", "support", "3", "Rakan", "g2 esports", "Bélgica")
-const support4 = new Player("ming", "support", "2", "Leona", "rng", "China")
-const support5 = new Player("keria", "support", "1", "Thresh", "t1", "Corea del sur")
+const support5 = new Player("kaiwing", "psgTalon/kaiwing.png", "support", "5", "Nautilus", "psg talon", "Hong Kong")
+const support4 = new Player("vulcan", "evilGeniuses/vulcan.png", "support", "4", "Alistar", "evil geniuses", "Canada")
+const support3 = new Player("targamas", "G2/targamas.png", "support", "3", "Rakan", "g2 esports", "Bélgica")
+const support2 = new Player("ming", "RNG/ming.png", "support", "2", "Leona", "rng", "China")
+const support1 = new Player("keria", "T1/keria.png", "support", "1", "Thresh", "t1", "Corea del sur")
+
+const supportArray = [support5, support4, support3, support2, support1]
+
+// all players
 
 const playersArray = [
   top5, top4, top3, top2, top1,
@@ -87,6 +99,173 @@ const showMyTeam = () => {
     showPlayer(player)
   })
 }
+
+/* top injection */
+const topContainer = document.getElementById("topContainer")
+topArray.forEach((top) => {
+  const card = document.createElement("div")
+  card.innerHTML = `
+  <div class="card">
+    <h3 class="role">${top.role}</h3>
+    <img src="assets/fotosJugadores/${top.image}" class="topImg" alt=" ${top.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${top.name}</h4>
+      <p class="cardText">PUESTO ${top.topFive}</p>
+      <button data-id="${top.name}" class="addPlayerButton">Elegir</button>
+    </div>
+  </div>
+  `
+  topContainer.append(card)
+})
+
+/* jungle injection */
+const jungleContainer = document.getElementById("jungleContainer")
+jungleArray.forEach((jungle) => {
+  const card = document.createElement("div")
+  card.innerHTML = `
+  <div class="card">
+    <h3 class="role">${jungle.role}</h3>
+    <img src="assets/fotosJugadores/${jungle.image}" class="jungleImg" alt=" ${jungle.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${jungle.name}</h4>
+      <p class="cardText">PUESTO ${jungle.topFive}</p>
+      <button data-id="${jungle.name}" class="addPlayerButton">Elegir</button>
+    </div>
+  </div>
+  `
+  jungleContainer.append(card)
+})
+
+/* mid injection */
+const midContainer = document.getElementById("midContainer")
+midArray.forEach((mid) => {
+  const card = document.createElement("div")
+  card.innerHTML = `
+  <div class="card">
+    <h3 class="role">${mid.role}</h3>
+    <img src="assets/fotosJugadores/${mid.image}" class="midImg" alt=" ${mid.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${mid.name}</h4>
+      <p class="cardText">PUESTO ${mid.topFive}</p>
+      <button data-id="${mid.name}" class="addPlayerButton">Elegir</button>
+    </div>
+  </div>
+  `
+  midContainer.append(card)
+})
+
+/* adc injection */
+const adcContainer = document.getElementById("adcContainer")
+adcArray.forEach((adc) => {
+  const card = document.createElement("div")
+  card.innerHTML = `
+  <div class="card">
+    <h3 class="role">${adc.role}</h3>
+    <img src="assets/fotosJugadores/${adc.image}" class="adcImg" alt=" ${adc.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${adc.name}</h4>
+      <p class="cardText">PUESTO ${adc.topFive}</p>
+      <button data-id="${adc.name}" class="addPlayerButton">Elegir</button>
+    </div>
+  </div>
+  `
+  adcContainer.append(card)
+})
+
+/* support injection */
+const supportContainer = document.getElementById("supportContainer")
+supportArray.forEach((support) => {
+  const card = document.createElement("div")
+  card.innerHTML = `
+  <div class="card">
+    <h3 class="role">${support.role}</h3>
+    <img src="assets/fotosJugadores/${support.image}" class="supportImg" alt=" ${support.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${support.name}</h4>
+      <p class="cardText">PUESTO ${support.topFive}</p>
+      <button data-id="${support.name}" class="addPlayerButton">Elegir</button>
+    </div>
+  </div>
+  `
+  supportContainer.append(card)
+})
+
+const addPlayer = (e) => {
+  const playerName = e.target.getAttribute("data-id")
+  const playerFound = playersArray.find((player) => player.name === playerName)
+  if (playerFound.role == "top") {
+    myTeam.push(playerFound)
+    topContainer.style.display = "none"
+  } else if (playerFound.role == "jungla") {
+    myTeam.push(playerFound)
+    jungleContainer.style.display = "none"
+  } else if (playerFound.role == "mid") {
+    myTeam.push(playerFound)
+    midContainer.style.display = "none"
+  } else if (playerFound.role == "adc") {
+    myTeam.push(playerFound)
+    adcContainer.style.display = "none"
+  } else if (playerFound.role == "support") {
+    myTeam.push(playerFound)
+    supportContainer.style.display = "none"
+  }
+  console.log(`${playerFound.name} fue agregado a tu equipo!`)
+  if (myTeam.length === 5) {
+    alert("Tu equipo esta completo!")
+    const myTeamContainer = document.getElementById("myTeamContainer")
+    myTeam.forEach((player) => {
+      const card = document.createElement("div")
+      card.innerHTML = `
+      <div class="card">
+    <h3 class="role">${player.role}</h3>
+    <img src="assets/fotosJugadores/${player.image}" class="supportImg" alt=" ${player.name}'s image">
+    <div class="cardBody">
+      <h4 class="cardTitle">${player.name}</h4>
+      <p class="cardText">PUESTO ${player.topFive}</p>
+      <p class="cardText">${player.team}</p>
+    </div>
+  </div>
+  `
+      myTeamContainer.append(card)
+    })
+    myTeamContainer.style.display = "display"
+    console.log('Tu equipo es: ', myTeam)
+  }
+
+}
+
+
+const addButtons = document.querySelectorAll(".addPlayerButton")
+addButtons.forEach((addButton) => {
+  addButton.addEventListener("click", addPlayer)
+})
+
+const hideRow = () => {
+  if (Player.role === "top") {
+    topContainer.style.display = "none"
+  } else if (Player.role === "jungla") {
+    jungleContainer.style.display = "none"
+  } else if (Player.role === "mid") {
+    midContainer.style.display = "none"
+  } else if (Player.role === "adc") {
+    adcContainer.style.display = "none"
+  } else if (Player.role === "support") {
+    supportContainer.style.display = "none"
+  }
+      
+}
+
+
+const topButton = document.querySelectorAll(".addPlayerButton")
+topButton.forEach((topButton) => {
+  topButton.addEventListener("click", hideRow)
+})
+
+
+
+
+
+/* OLD METHOD
 
 const choosePlayers = () => {
   chooseTopPlayer()
@@ -259,7 +438,7 @@ const chooseSupportPlayer = () => {
 }
 
 
-const userFind = () => {
+ const userFind = () => {
   let userFindings = prompt("Dame un rol").toLowerCase()
 
   let playerFound = playersArray.find((player) => player.role === userFindings)
@@ -276,7 +455,7 @@ const userFilter = () => {
     || player.topFive.includes(userSearch))
 
   console.log(filteredPlayer)
-}
+} 
 
 
 if (confirm("Armemos su dream team de league of legends!")) {
@@ -289,3 +468,4 @@ if (confirm("Armemos su dream team de league of legends!")) {
 } else {
   alert("Gracias por usar nuestro programa")
 }
+ */
