@@ -78,7 +78,7 @@ const addPlayer = (e) => {
     supportContainer.style.display = "none"
   }
   console.log(`${playerFound.name} fue agregado a tu equipo!`)
-  localStorage.setItem('myTeam', JSON.stringify(myTeam))
+
   /* rendering selected team */
   if (myTeam.length === 5) {
     alert("Tu equipo esta completo!")
@@ -87,6 +87,14 @@ const addPlayer = (e) => {
     myTeamContainer.style.display = "display"
     console.log('Tu equipo es: ', myTeam)
   }
+
+  /* saving selection to LS */
+  localStorage.setItem('myTeam', JSON.stringify(myTeam))
+}
+
+if (localStorage.getItem('myTeam') != null) {
+  myTeam = JSON.parse(localStorage.getItem('myTeam'))
+  myTeamRendering()
 }
 
 
