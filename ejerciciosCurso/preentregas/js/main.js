@@ -15,7 +15,7 @@ const allPlayersArray = [
   support1, support2, support3, support4, support5
 ]
 
-const myTeam = []
+let myTeam = []
 
 // functions
 
@@ -56,6 +56,29 @@ const myTeamRendering = () => {
   })
 }
 
+const landingPage = () => {
+  /* top injection */
+const topContainer = document.getElementById("topContainer")
+rowRendering(topArray, topContainer)
+
+/* jungle injection */
+const jungleContainer = document.getElementById("jungleContainer")
+rowRendering(jungleArray, jungleContainer)
+
+/* mid injection */
+const midContainer = document.getElementById("midContainer")
+rowRendering(midArray, midContainer)
+
+/* adc injection */
+const adcContainer = document.getElementById("adcContainer")
+rowRendering(adcArray, adcContainer)
+
+/* support injection */
+const supportContainer = document.getElementById("supportContainer")
+rowRendering(supportArray, supportContainer)
+}
+
+
 /* Add player Function */
 const addPlayer = (e) => {
   const playerName = e.target.getAttribute("data-id")
@@ -92,33 +115,14 @@ const addPlayer = (e) => {
   localStorage.setItem('myTeam', JSON.stringify(myTeam))
 }
 
-if (localStorage.getItem('myTeam') != null) {
+if (localStorage.getItem('myTeam') != null && myTeam < 5) {
+  if (confirm("Tu equipo ya esta guardado en el navegador, ¿deseas cargarlo?")) {
   myTeam = JSON.parse(localStorage.getItem('myTeam'))
   myTeamRendering()
+} else {
+  landingPage()
 }
-
-
-/* top injection */
-const topContainer = document.getElementById("topContainer")
-rowRendering(topArray, topContainer)
-
-/* jungle injection */
-const jungleContainer = document.getElementById("jungleContainer")
-rowRendering(jungleArray, jungleContainer)
-
-/* mid injection */
-const midContainer = document.getElementById("midContainer")
-rowRendering(midArray, midContainer)
-
-/* adc injection */
-const adcContainer = document.getElementById("adcContainer")
-rowRendering(adcArray, adcContainer)
-
-/* support injection */
-const supportContainer = document.getElementById("supportContainer")
-rowRendering(supportArray, supportContainer)
-
-
+}
 
 const addButtons = document.querySelectorAll(".addPlayerButton")
 addButtons.forEach((addButton) => {
