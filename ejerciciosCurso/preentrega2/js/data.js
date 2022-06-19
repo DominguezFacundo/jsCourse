@@ -60,5 +60,3 @@ const support4 = new Player("vulcan", "evilGeniuses/vulcan.png", "support", "4",
 const support3 = new Player("targamas", "G2/targamas.png", "support", "3", "Rakan", "g2 esports", "Bélgica")
 const support2 = new Player("ming", "RNG/ming.png", "support", "2", "Leona", "rng", "China")
 const support1 = new Player("keria", "T1/keria.png", "support", "1", "Thresh", "t1", "Corea del sur")
-
-
