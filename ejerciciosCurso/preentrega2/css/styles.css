@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  color: white;
+  text-align: center;
+  margin: 50px 0 50px 0;
+}
+
+body {
+  background-image: url(../assets/bgImg.svg);
+}
+
+#topContainer,
+#jungleContainer,
+#midContainer,
+#adcContainer,
+#supportContainer,
+#myTeamContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 10px;
+  border: 1px solid #258843;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.role {
+  text-align: center;
+  text-decoration: underline #258843;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.topImg,
+.junglaImg,
+.midImg,
+.adcImg,
+.supportImg {
+  height: 250px;
+  width: 300px;
+}
+
+.cardTitle {
+  color: white;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cardText {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.addPlayerButton {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.addPlayerButton:hover {
+  background-color: #258843;
+  color: white;
+}
