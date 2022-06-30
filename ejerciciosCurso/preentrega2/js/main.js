@@ -1,23 +1,46 @@
 // arrays
 
-const topArray = [top5, top4, top3, top2, top1]
-const jungleArray = [jungle5, jungle4, jungle3, jungle2, jungle1]
-const midArray = [mid5, mid4, mid3, mid2, mid1]
-const adcArray = [adc5, adc4, adc3, adc2, adc1]
-const supportArray = [support5, support4, support3, support2, support1]
+let topArray = []
+let jungleArray = []
+let midArray = []
+let adcArray = []
+let supportArray = []
 
-const allPlayersArray = [
-  top5, top4, top3, top2, top1,
-  jungle1, jungle2, jungle3, jungle4, jungle5,
-  mid1, mid2, mid3, mid4, mid5,
-  adc1, adc2, adc3, adc4, adc5,
-  support1, support2, support3, support4, support5
-]
+let allPlayersArray = []
 
 let myTeam = []
 
 // functions
 
+
+const getData = () => {
+  if (allPlayersArray != null) {
+  fetch('../data.json')
+  .then(response => response.json())
+  .then(players => {
+    allPlayersArray = players.data
+  })
+  .then(() => {
+    allPlayersArray.forEach(player => {
+      if (player.role === "top") {
+        topArray.push(player)
+      } else if (player.role === "jungla") {
+        jungleArray.push(player)
+      } else if (player.role === "mid") {
+        midArray.push(player)
+      } else if (player.role === "adc") {
+        adcArray.push(player)
+      } else if (player.role === "support") {
+        supportArray.push(player)
+      }
+    })
+  })
+  .then(() => {
+    landingPage()
+  })
+  .catch(error => console.log(error))
+}
+}
 
 /* Row Rendering Function */
 const rowRendering = (array, container) => {
@@ -35,6 +58,10 @@ const rowRendering = (array, container) => {
     </div>
     `
     container.append(card)
+  })
+  const addButtons = document.querySelectorAll(".addPlayerButton")
+  addButtons.forEach((addButton) => {
+    addButton.addEventListener("click", addPlayer)
   })
 }
 
@@ -57,6 +84,7 @@ const myTeamRendering = () => {
 
 
 let landingPage = () => {
+  console.log('se llamo a landingPage');
   /* top injection */
   const topContainer = document.getElementById("topContainer")
   rowRendering(topArray, topContainer)
@@ -110,7 +138,7 @@ const addPlayer = (e) => {
       toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
   })
-  
+
   Toast.fire({
     icon: "success",
     title: `${playerName} fue agregado a tu equipo`,
@@ -146,7 +174,7 @@ const addPlayer = (e) => {
     showCancelButton: true,
     confirmButtonColor: '#258843',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Si, borralo!',
+    confirmButtonText: 'Si, bórrelo!',
     cancelButtonText: 'No, mejor no!',
     color: "#FAFAFA",
     background: "black",
@@ -162,15 +190,9 @@ const addPlayer = (e) => {
       }),
       localStorage.removeItem('myTeam'),
       myTeamContainer.innerHTML = "",
-      landingPage()
+      getData()
     )
       : (myTeam = JSON.parse(localStorage.getItem('myTeam')),
         myTeamRendering())
   }))
-  : landingPage()
-
-
-const addButtons = document.querySelectorAll(".addPlayerButton")
-addButtons.forEach((addButton) => {
-  addButton.addEventListener("click", addPlayer)
-})
+  : getData()
